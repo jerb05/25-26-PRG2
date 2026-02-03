@@ -75,22 +75,22 @@ public class JuegoAdivinanza {
                         idx++;
                     }
                 }
-                continue; // Volver a empezar
-            } else if (opt_juego == 1) { // Adivinar
+                continue; 
+            } else if (opt_juego == 1) { 
                 System.out.print("Tu numero: ");
                 int n = sc.nextInt();
                 
-                // Valida rango
-                if (n < minN || n > maxN) {
-                    System.out.println("El numero debe estar entre " + minN + " y " + maxN);
+                
+                if (n < numMinimo || n > numMaximo) {
+                    System.out.println("El numero debe estar entre " + numMinimo + " y " + numMaximo);
                     pistaActual = "Fuera de rango";
-                    // Guardar en historial
+                    
                     if (idx < maxI) {
                         histN[idx] = n;
                         histP[idx] = pistaActual;
                         idx++;
                     }
-                    continue; // Saltar intento
+                    continue;
                 }
                 
                 intentosRealizados++;
@@ -102,15 +102,15 @@ public class JuegoAdivinanza {
                     pistaActual = "¡Adivinado!";
                 } else if (n < ns) {
                     System.out.println("El numero es MAYOR");
-                    if (n > ns - 5 && n < ns + 5) { // Cerca
+                    if (n > ns - 5 && n < ns + 5) { 
                         System.out.println("¡Muy cerca!");
                         pistaActual = "MAYOR, ¡Muy cerca!";
                     } else {
                         pistaActual = "MAYOR";
                     }
-                } else { // n > ns
+                } else {
                     System.out.println("El numero es MENOR");
-                    if (n > ns - 5 && n < ns + 5) { // Cerca
+                    if (n > ns - 5 && n < ns + 5) { 
                         System.out.println("¡Muy cerca!");
                         pistaActual = "MENOR, ¡Muy cerca!";
                     } else {
@@ -118,7 +118,7 @@ public class JuegoAdivinanza {
                     }
                 }
                 
-                // Guardar en historial
+                
                 if (idx < maxI) {
                     histN[idx] = n;
                     histP[idx] = pistaActual;
@@ -127,17 +127,17 @@ public class JuegoAdivinanza {
             } else {
                 System.out.println("Opcion invalida.");
                 pistaActual = "Opcion invalida";
-                // No hay intento consumido
+                
             }
         }
 
         if (!adivinado) {
-            System.out.println(); // espacio
+            System.out.println(); 
             System.out.println("¡Se acabaron los intentos!");
             System.out.println("El numero era: " + ns);
         }
 
-        System.out.println(); // espacio
+        System.out.println(); 
         System.out.println("Historial de Intentos");
         for (int k = 0; k < idx; k++) {
             System.out.println((k + 1) + ". " + histN[k] + " -> " + histP[k]);
