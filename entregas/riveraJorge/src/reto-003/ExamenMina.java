@@ -52,21 +52,18 @@ public class ExamenMina{
         
 		
         
-			valoresCorrectos=0;
-			while(valoresCorrectos==0){
+			while(!valoresCorrectos) {
 				System.out.println(" ");
 				System.out.println("Ingrese X");
 				posY = scan.nextInt();
 				System.out.println("Ingrese Y");
 				posX = scan.nextInt();
-				if(posX>5){
-					valoresCorrectos=0;
-				}
-				else if(posY>7){
-					valoresCorrectos=0;
+				if (posX >= 1 && posX <= 5 && posY >= 1 && posY <= 7) {
+					valoresCorrectos = true;
 				}
 				else{
-					valoresCorrectos=1;
+					valoresCorrectos = false;
+                    System.out.println("Coordenada invalida. Fuera del mapa.");
 				}
 			}
 
