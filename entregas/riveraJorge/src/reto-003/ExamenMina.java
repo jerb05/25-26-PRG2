@@ -32,15 +32,26 @@ public class ExamenMina{
 			
 		}
 	
-		int posX=0, posY=0, juegoEncendido=1, valoresCorrectos, contadorMapa=0, contadorMinas=0;
+		int posX= 0;
+        int posY= 0;
+        int contadorMapa = 0;
+        int contadorMinas = 0;
+         
+        boolean valoresCorrectos;
+         boolean juegoIniciar = true; {
 
-		while(juegoEncendido==1){
-			for( i = 0; i<Mapa.length; i++){            
+            while (juegoIniciar) {
+			for( int i = 0; i<Mapa.length; i++){            
 				for (int j = 0; j<=Mapa.length+1; j++) {                                     
 					System.out.print(Mapa[i][j]);
 				}
 				System.out.println(" ");
 			}
+
+        }
+        
+		
+        
 			valoresCorrectos=0;
 			while(valoresCorrectos==0){
 				System.out.println(" ");
@@ -86,4 +97,3 @@ public class ExamenMina{
 	}	
 		
 		
-}
