@@ -18,8 +18,8 @@ public class ExamenMina{
 		
     int cantidadMinas = 0;	
 		while ( cantidadMinas < 5){
-			int posYMina = (int)(Math.random()*5);
-			int posXMina = (int)(Math.random()*7);
+			int posYMina = (int)(Math.random() * 5);
+			int posXMina = (int)(Math.random() * 7);
 			if(Mapa[posXMina][posYMina] == 1) {
 
             } else{
@@ -55,7 +55,8 @@ public class ExamenMina{
 			while(!valoresCorrectos) {
 				System.out.println(" ");
 				System.out.println("Ingrese X");
-				posY = scan.nextInt();
+				Scanner scan = null;
+                posY = scan.nextInt();
 				System.out.println("Ingrese Y");
 				posX = scan.nextInt();
 				if (posX >= 1 && posX <= 5 && posY >= 1 && posY <= 7) {
@@ -67,25 +68,27 @@ public class ExamenMina{
 				}
 			}
 
-			if(Mapa[posX][posY]=="1"){
-			Mapa[posX][posY]="x";
+			if(Mapa[posX][posY] == 1){
+			Mapa[posX][posY] = 3;
 			contadorMinas++;
+            System.out.println("Encontraste una mina.");
 			}
-			else if(Mapa[posX][posY]=="0"){
-			Mapa[posX][posY]=".";
+			else if(Mapa[posX][posY] == 0){
+			Mapa[posX][posY]= 2;
+            System.out.println("No hay nada aqui");
 			}
 			else{
 			System.out.println("No es correcta esa opcion.");
 			}
 			
 			contadorMapa++;
-			if(contadorMinas>2){
-				juegoEncendido=0;
-				System.out.println("Has perdido");
+			if(contadorMinas >= 3) {
+				juegoIniciar = false;
+				System.out.println("Te has parado en muchas minas. Perdiste.");
 			}
-			else if(contadorMapa>=31){
-				System.out.println("Felicidades Ganador!");
-				juegoEncendido=0;
+			else if(contadorMapa >= 30){
+				System.out.println("Ganaste! Has despejado el mapa!");
+				juegoIniciar = false;
 			}
 			else{
 				
