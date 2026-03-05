@@ -7,6 +7,7 @@ class Intervalo {
     public Intervalo ()
     public Intervalo (Intervalo intervalo)
 
+    public Intervalo clone()
     public double longitud()
     public void desplazar(double desplazamiento)
     public Intervalo desplazado(double desplazamiento)
