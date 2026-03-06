@@ -2,25 +2,89 @@ package vistas.intervalo;
 
 class Intervalo {
 
-    public Intervalo (double inferior, double superior)
-    public Intervalo (double superior)
-    public Intervalo ()
-    public Intervalo (Intervalo intervalo)
+    private double superior;
+    private double inferior;
 
-    public Intervalo clone()
-    public double longitud()
-    public void desplazar(double desplazamiento)
-    public Intervalo desplazado(double desplazamiento)
+    public Intervalo (double inferior, double superior) {
+        this.inferior = inferior;
+        this.superior = superior;
+    }
 
-    public boolean incluye(double punto)
-    public boolean incluye(Intervalo intervalo)
+    public Intervalo (double superior) {
+        this(0,superior);
+    }
 
-    public boolean equals(Intervalo intervalo)
-    public Intervalo interseccion(Intervalo intervalo)
-    public boolean intersecta(Intervalo intervalo)   
+    public Intervalo () {
+        this(0,0);
+    }
     
-    public void oponer()
-    public void doblar()
+    public Intervalo (Intervalo intervalo) {
+        this(intervalo.inferior, intervalo.superior)
+    }
+
+    public Intervalo clone() {
+        return new Intervalo(this);
+
+    }
+
+    public double longitud() {
+        return superior - inferior;
+    }
+
+    public void desplazar(double desplazamiento) {
+        inferior = inferior + desplazamiento;
+        superior = superior + desplazamiento;
+    }
+
+    public Intervalo desplazado(double desplazamiento) {
+
+        Intervalo intervalo = this.clone();
+        intervalo.desplazar(desplazamiento);
+        return intervalo;
+    }
+
+    public boolean incluye(double punto) {
+        return inferior <= punto && punto <= superior;
+    }
+
+    public boolean incluye(Intervalo intervalo) {
+
+        return this.incluye(intervalo.inferior) && 
+                this.incluye(intervalo.superior);
+    }
+
+    public boolean equals(Intervalo intervalo) {
+
+        return inferior == intervalo.inferior && 
+                superior == intervalo.superior;
+    }
+
+
+    public Intervalo interseccion(Intervalo intervalo)
+    
+    public boolean intersecta(Intervalo intervalo) {
+
+        return this.incluye(intervalo.inferior) ||
+                this.incluye(intervalo.superior) ||
+                intervalo.incluye(this);
+    }
+    
+    public void oponer() {
+        double superiorInicial = superior;
+
+        superior = -inferior;
+        inferior = -superiorInicial;
+    }
+
+    public void doblar() {
+        double longitudInicial = this.longitud();
+
+        inferior = inferior - longitudInicial/2;
+        superior = superior + longitudInicial/2;
+    }
+
+
+
     public void mostrar()
     public void recoger()
 
