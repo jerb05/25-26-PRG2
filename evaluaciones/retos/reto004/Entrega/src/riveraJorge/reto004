@@ -3,8 +3,27 @@ package vistas.fraccion;
 public class Fraccion {
 
     public Fraccion(int numerador, int denominador){}
-
+    public Fraccion(int numero){}
+    public Fraccion(Fraccion fraccion){}
     public Fraccion(){}
+
+    public Fraccion clonar(){}
+
+    public void sumar(Fraccion fraccion){}
+    pubic void restar(Fraccion fraccion){}
+    pubic void multiplicar(Fraccion fraccion){}
+    pubic void dividir(Fraccion fraccion){}
+    public void potenciar(int exponente){}
+
+    public boolean esMayor(Fraccion fraccion){}
+    public boolean esMenor(Fraccion fraccion){}
+
+    public boolean equals(Fraccion fraccion){}
+
+    public void mostrar(){}
+    public void invertir(){}
+    public void oponer(){} 
+
 
     
 }
