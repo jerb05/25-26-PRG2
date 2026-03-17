@@ -1,0 +1,10 @@
+package vistas.fraccion;
+
+public class Fraccion {
+
+    public Fraccion(int numerador, int denominador){}
+
+    public Fraccion(){}
+
+    
+}
