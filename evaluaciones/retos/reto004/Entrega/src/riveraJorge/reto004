@@ -22,8 +22,7 @@ public class Fraccion {
 
     public void mostrar(){}
     public void invertir(){}
-    public void oponer(){} 
-
+    public void oponer(){}
 
     
 }
