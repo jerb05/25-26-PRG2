@@ -13,6 +13,15 @@ public Fraccion(int numerador, int denominador){}
     public void dividir(Fraccion fraccion){}
     public void potenciar(int exponente){}
 
+    public boolean esMayor(Fraccion fraccion){}
+    public boolean esMenor(Fraccion fraccion){}
+
+    public boolean equals(Fraccion fraccion){}
+
+    public void mostrar(){}
+    public void invertir(){}
+    public void oponer(){}
+
     
 }
 
