@@ -1,0 +1,9 @@
+class Juego {
+
+    oublic static void main(String[] args) {
+
+        TresEnRaya tresEnRaya = new TresEnRaya();
+        tresEnRaya.jugar();
+        
+    }
+}
