@@ -41,4 +41,13 @@ class Carrera {
     determinarGanador(); 
 }
     }
+
+    private void determinarGanador() {
+    if (c1.getPosicion() >= META && c2.getPosicion() >= META) {
+        System.out.println("¡Empate!");
+    } else if (c1.getPosicion() >= META) {
+        System.out.println("Ganó el caballo 1");
+    } else if (c2.getPosicion() >= META) {
+        System.out.println("Ganó el caballo 2");
+    }
 }
