@@ -7,4 +7,10 @@ public class Caballo {
         this.numero = numero;
         this.posicion = 0;
     }
+
+    public void avanzar(){
+
+        int avance = (int) (Math.random() * 3);
+        this.posicion += avance;
+    }
 }
