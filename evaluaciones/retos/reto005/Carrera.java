@@ -21,4 +21,24 @@ class Carrera {
         System.out.print(" ");
     }
     System.out.println(";-;'");
+
+    public void jugar() {
+        boolean turnoC1 = Math.random() < 0.5;
+
+    while (c1.getPosicion() < META && c2.getPosicion() < META) {
+        if (turnoC1) {
+            c1.avanzar();
+        } else {
+            c2.avanzar();
+        }
+
+        mostrarPista();
+        turnoC1 = !turnoC1; 
+
+        
+        try { Thread.sleep(200); } catch (InterruptedException e) {}
+    }
+    determinarGanador(); 
+}
+    }
 }
