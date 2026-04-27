@@ -13,4 +13,12 @@ public class Caballo {
         int avance = (int) (Math.random() * 3);
         this.posicion += avance;
     }
+
+    public int getPosicion() {
+        return this.posicion;
+    }
+
+    public int getNumero() {
+        return this.numero;
+    }
 }
