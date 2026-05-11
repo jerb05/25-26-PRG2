@@ -23,4 +23,8 @@ public class Carta {
 
         return Integer.parseInt(rango);
     }
+
+    public String getRango() {
+        return rango;
+    }
 }
