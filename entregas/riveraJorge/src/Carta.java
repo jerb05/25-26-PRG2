@@ -6,4 +6,8 @@ public class Carta {
         this.palo = palo;
         this.rango = rango;
     }
+
+    public String toString() {
+        return"[" + rango + " " + palo + "]";
+    }
 }
