@@ -13,4 +13,23 @@ public class Mano {
     public void agregarCarta(Carta carta) {
         this.cartas.add(carta);
     }
+
+    private void calcularPuntaje() {
+    int total = 0;
+    int contadorAses = 0;
+
+    for (Carta c : cartas) {
+        total += c.getValorNumerico();
+        if (c.getRango().equals("A")) {
+            contadorAses++;
+        }
+    }
+
+    while (total > 21 && contadorAses > 0) {
+        total -= 10;
+        contadorAses--;
+    }
+        this.puntaje = total;
+    
+    }
 }
