@@ -33,7 +33,26 @@ public class Juego {
                         System.out.println(mano);
                     }
                 } else {
-                    System.out.println("La partida terminó. Elige 'Empezar de nuevo'.");
+                    System.out.println("La partida terminó. Elige "Empezar de nuevo".");
                 }
+
+                } else if (opcion.equals("2")) {
+                // Reiniciamos todo
+                baraja = new Baraja();
+                mano = new Mano();
+                mano.agregarCarta(baraja.repartir());
+                mano.agregarCarta(baraja.repartir());
+
+            } else if (opcion.equals("3")) {
+                System.out.println("¡Gracias por jugar!");
+                jugando = false;
+            }
+        }
+        entrada.close();
     }
+}
+
+    }
+}
+
 }
