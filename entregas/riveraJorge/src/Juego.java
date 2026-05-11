@@ -36,8 +36,7 @@ public class Juego {
                     System.out.println("La partida terminó. Elige "Empezar de nuevo".");
                 }
 
-                } else if (opcion.equals("2")) {
-                // Reiniciamos todo
+                } else if (opcion.equals("2")) {          
                 baraja = new Baraja();
                 mano = new Mano();
                 mano.agregarCarta(baraja.repartir());
@@ -50,9 +49,4 @@ public class Juego {
         }
         entrada.close();
     }
-}
-
-    }
-}
-
 }
