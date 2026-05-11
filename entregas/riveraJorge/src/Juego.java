@@ -21,6 +21,19 @@ public class Juego {
                 System.out.println("--------------------");
 
                 String opcion = entrada.nextLine();
+            }
 
+            if (opcion.equals("1")) {
+               
+                if (mano.getEstado().equals("Sigue jugando")) {
+                    mano.agregarCarta(baraja.repartir());
+                
+                    if (!mano.getEstado().equals("Sigue jugando")) {
+                        System.out.println("--------------------");
+                        System.out.println(mano);
+                    }
+                } else {
+                    System.out.println("La partida terminó. Elige 'Empezar de nuevo'.");
+                }
     }
 }
