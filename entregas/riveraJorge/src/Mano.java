@@ -32,4 +32,18 @@ public class Mano {
         this.puntaje = total;
     
     }
+
+    
+        public String toString() {
+        String resultado = "Mano: ";
+    
+   
+        for (Carta c : cartas) {
+            resultado = resultado + c.toString(); 
+        }
+    
+        resultado = resultado + " - Puntaje: " + this.puntaje + " ==> " + getEstado();
+    
+        return resultado;
+    }
 }
