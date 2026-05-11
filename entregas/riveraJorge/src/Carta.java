@@ -10,4 +10,17 @@ public class Carta {
     public String toString() {
         return"[" + rango + " " + palo + "]";
     }
+
+    public int getValorNumerico() {
+
+        if (rango.equals("J") || rango.equals("Q") || rango.equals("K")) {
+            return 10;
+        }
+
+        if (rango.equals("A")) {
+            return 11;
+        }
+
+        return Integer.parseInt(rango);
+    }
 }
